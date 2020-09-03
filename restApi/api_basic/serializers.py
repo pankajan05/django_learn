@@ -3,9 +3,10 @@ from .models import Book
 
 
 class BookSerializer(serializers.Serializer):
-    ISBN = serializers.models.CharField(max_length=10)
-    Title = serializers.models.CharField(max_length=200)
-    Author = serializers.models.CharField(max_length=200)
+    ISBN = serializers.CharField(max_length=10)
+    Title = serializers.CharField(max_length=200)
+    Author = serializers.CharField(max_length=200)
+    Date = serializers.DateTimeField()
 
     def create(self, validated_data):
         return Book.objects.create(validated_data)
