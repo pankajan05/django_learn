@@ -24,10 +24,8 @@ def book_list(request):
 
 @csrf_exempt
 def book_detail(request, pk):
-
     try:
-        print(pk)
-        book = Book.objects.get(pk=pk)
+        book = Book.objects.get(ISBN=pk)
     except Book.DoesNotExist:
         return HttpResponse(status=404)
 
