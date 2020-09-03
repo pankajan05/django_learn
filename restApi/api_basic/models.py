@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 
 class Book(models.Model):
@@ -9,4 +10,4 @@ class Book(models.Model):
     Date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.Title
+        return self.ISBN
